@@ -4,7 +4,7 @@ A portfolio website automatically deployed to **GitHub Pages** using **GitHub Ac
 
 ## 🚀 Live Site
 
-Visit: `https://<your-username>.github.io/gh-deployment-workflow/`
+Visit: `https://vishwasvarma.github.io/gh-deployment-workflow/`
 
 ---
 
@@ -19,6 +19,7 @@ This project demonstrates a CI/CD pipeline using GitHub Actions to automatically
 The workflow in `.github/workflows/deploy.yml` is triggered **only** when a push to `main` includes changes to `index.html`. This keeps unnecessary deployments from running on unrelated file changes.
 
 ### Workflow Steps:
+
 1. **Checkout** – Pulls the latest code from the repo
 2. **Configure Pages** – Sets up the GitHub Pages environment
 3. **Upload Artifact** – Packages the site files for deployment
@@ -42,14 +43,17 @@ gh-deployment-workflow/
 ## 🛠️ Setup Instructions
 
 ### 1. Enable GitHub Pages
+
 - Go to your repo → **Settings** → **Pages**
 - Under **Source**, select **GitHub Actions**
 - Save the settings
 
 ### 2. Push a Change to Trigger Deployment
+
 Any push to `main` that modifies `index.html` will automatically trigger the workflow and deploy your updated portfolio.
 
 ### 3. Monitor the Workflow
+
 - Go to the **Actions** tab in your repository
 - Watch the `Deploy Portfolio to GitHub Pages` workflow run in real time
 
@@ -58,6 +62,7 @@ Any push to `main` that modifies `index.html` will automatically trigger the wor
 ## 🔒 Permissions
 
 The workflow uses the following GitHub token permissions:
+
 - `pages: write` – to deploy to GitHub Pages
 - `id-token: write` – for OIDC authentication
 - `contents: read` – to read repository files
