@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>M Vishwas | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #09090b;
+
+        color: white;
+
+        overflow-x: hidden;
+      }
+
+      /* SCROLLBAR */
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #111111;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #22d3ee;
+
+        border-radius: 10px;
+      }
+
+      /* NAVBAR */
+
+      nav {
+        position: fixed;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 80px;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 50px;
+
+        background: rgba(0, 0, 0, 0.5);
+
+        backdrop-filter: blur(20px);
+
+        border-bottom: 1px solid #27272a;
+
+        z-index: 1000;
+      }
+
+      nav a {
+        text-decoration: none;
+
+        color: #d4d4d8;
+
+        font-size: 16px;
+
+        font-weight: 600;
+
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #22d3ee;
+
+        transform: translateY(-2px);
+      }
+
+      /* GENERAL */
+
+      section {
+        min-height: 100vh;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 120px 40px;
+      }
+
+      .container {
+        width: 100%;
+
+        max-width: 1200px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: center;
+      }
+
+      .card {
+        background: #18181b;
+
+        border: 1px solid #27272a;
+
+        border-radius: 30px;
+
+        padding: 40px;
+
+        transition: 0.4s;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+
+        border-color: #22d3ee;
+
+        box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
+      }
+
+      /* HERO */
+
+      .hero-card {
+        width: 100%;
+
+        max-width: 950px;
+
+        text-align: center;
+
+        position: relative;
+
+        overflow: hidden;
+      }
+
+      .hero-card::before {
+        content: "";
+
+        position: absolute;
+
+        width: 400px;
+
+        height: 400px;
+
+        background: #22d3ee;
+
+        opacity: 0.1;
+
+        filter: blur(120px);
+
+        border-radius: 50%;
+
+        top: -200px;
+
+        left: -150px;
+      }
+
+      .hero-card::after {
+        content: "";
+
+        position: absolute;
+
+        width: 400px;
+
+        height: 400px;
+
+        background: #a855f7;
+
+        opacity: 0.1;
+
+        filter: blur(120px);
+
+        border-radius: 50%;
+
+        bottom: -200px;
+
+        right: -150px;
+      }
+
+      .hero-content {
+        position: relative;
+
+        z-index: 10;
+      }
+
+      .hero-title {
+        font-size: 72px;
+
+        font-weight: 900;
+
+        margin-bottom: 20px;
+
+        background: linear-gradient(90deg, #22d3ee, #3b82f6, #a855f7);
+
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-subtitle {
+        font-size: 26px;
+
+        color: #d4d4d8;
+
+        margin-bottom: 25px;
+      }
+
+      .hero-description {
+        font-size: 18px;
+
+        line-height: 35px;
+
+        color: #a1a1aa;
+
+        max-width: 750px;
+
+        margin: auto;
+      }
+
+      .button-group {
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 20px;
+
+        flex-wrap: wrap;
+
+        margin-top: 50px;
+      }
+
+      .btn {
+        padding: 15px 28px;
+
+        border-radius: 50px;
+
+        font-size: 16px;
+
+        font-weight: 700;
+
+        text-decoration: none;
+
+        transition: 0.3s;
+
+        cursor: pointer;
+      }
+
+      .primary {
+        background: #22d3ee;
+
+        color: black;
+      }
+
+      .primary:hover {
+        transform: translateY(-4px);
+
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.4);
+      }
+
+      .secondary {
+        border: 1px solid #22d3ee;
+
+        color: #22d3ee;
+      }
+
+      .secondary:hover {
+        background: #22d3ee;
+
+        color: black;
+      }
+
+      .github {
+        border: 1px solid #a855f7;
+
+        color: #a855f7;
+      }
+
+      .github:hover {
+        background: #a855f7;
+
+        color: white;
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 768px) {
+        nav {
+          gap: 18px;
+
+          font-size: 14px;
+        }
+
+        .hero-title {
+          font-size: 48px;
+        }
+
+        .hero-subtitle {
+          font-size: 20px;
+        }
+
+        .hero-description {
+          font-size: 16px;
+
+          line-height: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="#about">About</a>
+
+      <a href="#projects">Projects</a>
+
+      <a href="#education">Education</a>
+
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- HERO -->
+
+    <section>
+      <div class="container">
+        <div class="card hero-card">
+          <div class="hero-content">
+            <h1 class="hero-title">M VISHWAS</h1>
+
+            <p class="hero-subtitle">
+              Full Stack Developer • DevOps Enthusiast • SDE Intern Aspirant
+            </p>
+
+            <p class="hero-description">
+              3rd Year BTech Computer Science student at GITAM University
+              passionate about Backend Development, DevOps, Cloud Technologies
+              and building scalable applications. Currently transitioning from
+              Frontend Development towards Backend and DevOps while improving
+              Data Structures & Algorithms skills.
+            </p>
+
+            <div class="button-group">
+              <a href="#projects" class="btn primary"> View Projects </a>
+
+              <a href="Resume.pdf" download class="btn secondary">
+                Download Resume
+              </a>
+
+              <a href="https://github.com/vishwasvarma" class="btn github">
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT -->
+
+    <section id="about">
+      <div class="container">
+        <h2
+          style="
+            font-size: 48px;
+            margin-bottom: 60px;
+            color: #22d3ee;
+            font-weight: 800;
+          "
+        >
+          About Me
+        </h2>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+          "
+        >
+          <div class="card">
+            <h3 style="font-size: 28px; margin-bottom: 25px">Who Am I?</h3>
+
+            <p style="line-height: 35px; color: #a1a1aa">
+              3rd Year BTech Computer Science student at GITAM University
+              focused on becoming a Backend Developer and DevOps Engineer.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 28px; margin-bottom: 25px">What I Do?</h3>
+
+            <p style="line-height: 35px; color: #a1a1aa">
+              I build full-stack applications, automate deployments and enjoy
+              creating scalable systems.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 28px; margin-bottom: 25px">Interests</h3>
+
+            <p style="line-height: 35px; color: #a1a1aa">
+              Backend Development, DevOps, Cloud Technologies, Linux and Problem
+              Solving.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 28px; margin-bottom: 25px">Achievements</h3>
+
+            <p style="line-height: 35px; color: #a1a1aa">
+              200+ LeetCode Problems
+
+              <br /><br />
+
+              30+ Codeforces Problems
+
+              <br /><br />
+
+              CGPA 9.2
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+
+    <section>
+      <div class="container">
+        <h2
+          style="
+            font-size: 48px;
+            margin-bottom: 60px;
+            color: #22d3ee;
+            font-weight: 800;
+          "
+        >
+          Tech Stack
+        </h2>
+
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+          "
+        >
+          <span class="card">React</span>
+
+          <span class="card">Node.js</span>
+
+          <span class="card">Python</span>
+
+          <span class="card">Docker</span>
+
+          <span class="card">GitHub Actions</span>
+
+          <span class="card">PostgreSQL</span>
+
+          <span class="card">Linux</span>
+
+          <span class="card">Flask</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+      <div class="container">
+        <h2
+          style="
+            font-size: 48px;
+            margin-bottom: 60px;
+            color: #22d3ee;
+            font-weight: 800;
+          "
+        >
+          Projects
+        </h2>
+
+        <h3 style="font-size: 34px; margin-bottom: 40px">Development</h3>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            width: 100%;
+          "
+        >
+          <div class="card">
+            <h3 style="font-size: 28px">Resume Screening System</h3>
+
+            <p style="margin: 25px 0; line-height: 35px; color: #a1a1aa">
+              AI-powered resume screening application with job description
+              matching and candidate classification.
+            </p>
+
+            <p style="color: #22d3ee">React • Flask • Python • AI</p>
+
+            <br />
+
+            <a
+              href="https://github.com/vishwasvarma/Shortlyst"
+              target="_blank"
+              class="btn primary"
+            >
+              Open Repository
+            </a>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 28px">Ticket Auto Resolution System</h3>
+
+            <p style="margin: 25px 0; line-height: 35px; color: #a1a1aa">
+              Ticket management system with backend APIs and Docker deployment.
+            </p>
+
+            <p style="color: #22d3ee">React • PostgreSQL • Docker</p>
+
+            <br />
+
+            <a
+              href="https://github.com/vishwasvarma/ai-ticket-auto-resolution"
+              target="_blank"
+              class="btn primary"
+            >
+              Open Repository
+            </a>
+          </div>
+        </div>
+
+        <br /><br /><br /><br />
+
+        <h3 style="font-size: 34px; margin-bottom: 40px">DevOps</h3>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            width: 100%;
+          "
+        >
+          <div class="card">
+            <h3 style="font-size: 28px">Dockerized Full Stack App</h3>
+
+            <p style="margin: 25px 0; line-height: 35px; color: #a1a1aa">
+              Containerized frontend and backend applications with Linux
+              deployment.
+            </p>
+
+            <p style="color: #22d3ee">Docker • Linux • Nginx</p>
+
+            <br />
+
+            <a
+              href="https://github.com/vishwasvarma/ai-ticket-auto-resolution"
+              target="_blank"
+              class="btn primary"
+            >
+              Open Repository
+            </a>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 28px">CI/CD Automation Pipeline</h3>
+
+            <p style="margin: 25px 0; line-height: 35px; color: #a1a1aa">
+              Automated build and deployment using GitHub Actions.
+            </p>
+
+            <p style="color: #22d3ee">GitHub Actions • CI/CD</p>
+
+            <br />
+
+            <a
+              href="https://github.com/vishwasvarma/ai-ticket-auto-resolution"
+              target="_blank"
+              class="btn primary"
+            >
+              Open Repository
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CURRENTLY LEARNING -->
+
+    <section>
+      <div class="container">
+        <h2
+          style="
+            font-size: 48px;
+            margin-bottom: 60px;
+            color: #22d3ee;
+            font-weight: 800;
+          "
+        >
+          Currently Learning
+        </h2>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 100%;
+          "
+        >
+          <div class="card">
+            <h3 style="font-size: 28px; margin-bottom: 20px">System Design</h3>
+
+            <p style="color: #a1a1aa; line-height: 35px">
+              Learning scalable architectures and application design.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 28px; margin-bottom: 20px">Cloud & AWS</h3>
+
+            <p style="color: #a1a1aa; line-height: 35px">
+              Exploring cloud fundamentals and deployment concepts.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 28px; margin-bottom: 20px">DevOps</h3>
+
+            <p style="color: #a1a1aa; line-height: 35px">
+              Docker, Linux, CI/CD and automation workflows.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 28px; margin-bottom: 20px">DSA</h3>
+
+            <p style="color: #a1a1aa; line-height: 35px">
+              Improving problem solving consistency.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+      <div class="container">
+        <h2
+          style="
+            font-size: 48px;
+            margin-bottom: 80px;
+            color: #22d3ee;
+            font-weight: 800;
+          "
+        >
+          Education
+        </h2>
+
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            width: 100%;
+            max-width: 700px;
+          "
+        >
+          <div class="card" style="width: 100%; text-align: center">
+            <h3 style="font-size: 30px">St Mary's High School</h3>
+
+            <br />
+
+            <p style="color: #a1a1aa">2011 - 2021</p>
+
+            <br />
+
+            <p>Bangarupalyam</p>
+
+            <br />
+
+            <p>Percentage : 97%</p>
+          </div>
+
+          <div style="font-size: 50px; color: #22d3ee">↓</div>
+
+          <div class="card" style="width: 100%; text-align: center">
+            <h3 style="font-size: 30px">Narayana Junior College</h3>
+
+            <br />
+
+            <p style="color: #a1a1aa">2021 - 2023</p>
+
+            <br />
+
+            <p>Intermediate, MPC</p>
+
+            <br />
+
+            <p>Nellore</p>
+
+            <br />
+
+            <p>Percentage : 97.7%</p>
+          </div>
+
+          <div style="font-size: 50px; color: #22d3ee">↓</div>
+
+          <div class="card" style="width: 100%; text-align: center">
+            <h3 style="font-size: 30px">GITAM University</h3>
+
+            <br />
+
+            <p style="color: #a1a1aa">2023 - 2027</p>
+
+            <br />
+
+            <p>B.Tech CSE</p>
+
+            <br />
+
+            <p>Bengaluru</p>
+
+            <br />
+
+            <p>CGPA : 9.2</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <div class="container">
+        <h2
+          style="
+            font-size: 48px;
+            margin-bottom: 60px;
+            color: #22d3ee;
+            font-weight: 800;
+          "
+        >
+          Contact
+        </h2>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            width: 100%;
+          "
+        >
+          <div class="card">
+            <h3 style="font-size: 26px">📧 Email</h3>
+
+            <br />
+
+            <p style="color: #a1a1aa">vishwasvarma05@gmail.com</p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 26px">💻 GitHub</h3>
+
+            <br />
+
+            <p style="color: #a1a1aa">https://github.com/vishwasvarma</p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 26px">🔗 LinkedIn</h3>
+
+            <br />
+
+            <p style="color: #a1a1aa">www.linkedin.com/in/vishwas-mulbagal</p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 26px">📄 Resume</h3>
+
+            <br />
+
+            <a href="Resume.pdf" download class="btn primary">
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCROLL TO TOP -->
+
+    <button
+      id="topBtn"
+      style="
+        position: fixed;
+
+        bottom: 30px;
+
+        right: 30px;
+
+        width: 60px;
+
+        height: 60px;
+
+        border: none;
+
+        border-radius: 50%;
+
+        background: #22d3ee;
+
+        color: black;
+
+        font-size: 28px;
+
+        font-weight: 800;
+
+        cursor: pointer;
+
+        display: none;
+
+        z-index: 999;
+      "
+    >
+      ↑
+    </button>
+    <script>
+      /* ---------- Scroll To Top ---------- */
+
+      const topBtn = document.getElementById("topBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          topBtn.style.display = "block";
+        } else {
+          topBtn.style.display = "none";
+        }
+      });
+
+      topBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+
+          behavior: "smooth",
+        });
+      });
+
+      /* ---------- Fade Animation ---------- */
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        },
+
+        {
+          threshold: 0.15,
+        },
+      );
+
+      document.querySelectorAll(".card").forEach((card) => {
+        card.style.opacity = "0";
+
+        card.style.transform = "translateY(50px)";
+
+        card.style.transition = "all 0.8s ease";
+
+        observer.observe(card);
+      });
+
+      /* ---------- Navbar Active Link ---------- */
+
+      const sections = document.querySelectorAll("section");
+
+      const navLinks = document.querySelectorAll("nav a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 150;
+
+          const sectionHeight = section.clientHeight;
+
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.style.color = "#d4d4d8";
+
+          if (link.getAttribute("href") === "#" + current) {
+            link.style.color = "#22d3ee";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
