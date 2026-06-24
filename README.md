@@ -4,13 +4,13 @@ A portfolio website automatically deployed to **GitHub Pages** using **GitHub Ac
 
 ## 🚀 Live Site
 
-Visit: `https://vishwasvarma.github.io/gh-deployment-workflow/`
+Visit: [Clickable Text](`https://vishwasvarma.github.io/gh-deployment-workflow/`)
 
 ---
 
 ## 📋 Project Overview
 
-This project demonstrates a CI/CD pipeline using GitHub Actions to automatically deploy a static portfolio website to GitHub Pages whenever `index.html` is updated on the `main` branch.
+This project demonstrates a CI/CD pipeline using GitHub Actions to automatically deploy a static portfolio website to GitHub Pages whenever `index.html` is updated on the `main` branch and I am doing this for [Clickable Text](`https://roadmap.sh/projects/github-actions-deployment-workflow`).
 
 ---
 
